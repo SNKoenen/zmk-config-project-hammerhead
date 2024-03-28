@@ -1,2 +1,2 @@
 config SHIELD_PROJECT_HAMMERHEAD
-    def_bool $(shields_list_contains, prj_hammerhead_l)
+    def_bool $(shields_list_contains,prj_hammerhead_l)
