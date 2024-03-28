@@ -1,5 +1,3 @@
-#include "project_hammerhead.dtsi"
-
 &kscan0 {
     col-gpios = <&pro_micro 10 GPIO_ACTIVE_HIGH>, // col0
                 <&pro_micro 16 GPIO_ACTIVE_HIGH>, // col1
