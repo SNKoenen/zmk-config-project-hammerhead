@@ -1,0 +1,6 @@
+if SHIELD_PROJECT_HAMMERHEAD
+
+config ZMK_KEYBOARD_NAME
+    default "prj_hammerhead_l"
+
+endif
