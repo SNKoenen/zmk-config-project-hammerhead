@@ -1,0 +1,12 @@
+file_format: "1"
+id: project_hammerhead
+name: project_hammerhead
+type: shield
+url: https://github.com/SNKoenen/zmk-config-project-hammerhead
+requires: [pro_micro]
+exposes: [i2c_oled]
+features:
+  - keys
+siblings:
+  - project_hammerhead_left
+  - project_hammerhead_right

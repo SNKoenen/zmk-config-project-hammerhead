@@ -8,7 +8,7 @@
         
         default_layer {
 // --------------------------------------
-// |  TAB |  Q  |  W  |  E  |  R  |  T  |
+// | TAB  |  Q  |  W  |  E  |  R  |  T  |
 // | CTRL |  A  |  S  |  D  |  F  |  G  |
 // | SHFT |  Z  |  X  |  C  |  V  |  B  |
 //                    | GUI | LWR | SPC |
