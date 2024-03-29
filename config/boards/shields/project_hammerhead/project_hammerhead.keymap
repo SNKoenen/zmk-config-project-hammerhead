@@ -2,21 +2,44 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
 
+
 / {
     keymap {
         compatible = "zmk,keymap";
         
         default_layer {
-// --------------------------------------
-// | TAB  |  Q  |  W  |  E  |  R  |  T   |       |  Y  |  U  |  I  |  O  |  P  |      |
-// | CTRL |  A  |  S  |  D  |  F  |  G   |       |  H  |  J  |  K  |  L  |  ;  |  '   |
-// | SHFT |  Z  |  X  |  C  |  V  |  B   |       |  N  |  M  |  ,  |  .  |  /  | SHFT |
-//              | GUI | SPC | LWR | MUTE |       | LWR | SPC | GUI |  D  |
             bindings = <
-    &kp TAB     &kp Q       &kp W       &kp E       &kp R       &kp T               &kp Y       &kp U       &kp I       &kp O       &kp P       &none
-    &kp LCTRL   &kp A       &kp S       &kp D       &kp F       &kp G               &kp H       &kp J       &kp K       &kp L       &kp SEMI    &kp APOS
-    &kp LSHFT   &kp Z       &kp X       &kp C       &kp V       &kp B               &kp N       &kp M       &kp COMMA   &kp DOT     &kp FSLH    &kp RSHFT
-                            &kp LGUI    &kp SPACE   &mo 1       &kp C_MUTE          &kp C_MUTE  &kp LGUI    &mo 1       &kp SPACE  
+// ---------------------------------------------------------------------------------------------------------
+// |   TAB   |   Q   |   W   |   E   |   R   |   T   |     |   Y   |   U   |   I   |   O   |   P   |       |
+    &kp TAB    &kp Q   &kp W   &kp E   &kp R   &kp T         &kp Y   &kp U   &kp I   &kp O   &kp P   &none
+// ---------------------------------------------------------------------------------------------------------
+// |  CTRL   |   A   |   S   |   D   |   F   |   G   |     |   H   |   J   |   K   |   L   |   ;   |   '   |
+    &kp LCTRL &kp A &kp S &kp D &kp F &kp G                  &kp H   &kp J   &kp K   &kp L &kp SEMI &kp APOS
+// ---------------------------------------------------------------------------------------------------------
+// |   SHFT  |   Z   |   X   |   C   |   V   |   B   |     |   N   |   M   |   ,   |   .   |   /   | SHFT  |
+    &kp LSHFT &kp Z    &kp X   &kp C   &kp V   &kp B         &kp N   &kp M &kp COMMA &kp DOT &kp FSLH &kp RSHFT
+// ---------------------------------------------------------------------------------------------------------
+//                   |  GUI  |  SPC  |  LWR  | MUTE  |     | MUTE  |  SPC  | LAYER |      |
+                    &kp LGUI &kp SPACE &mo 1  &kp C_MUTE  &kp C_MUTE &kp LGUI &mo 1 &none
+// ---------------------------------------------------------------------------------------------------------          
+            >;
+        };
+
+
+        number_layer {
+            bindings = <
+// --------------------------------------------------------------------------------------------------------- 
+//  |   F1  |   F2  |   F3  |   F4  |   F5  |   F6  |      |   F7  |   F8  |   F9  |  F10  |  F11  |  F12  |
+     &kp F1   &kp F2  &kp f3  &kp F4  &kp F5  &kp F6         &kp F7  &kp F8  &kp f9  &kp F10 &kp F11 &kp F12
+// --------------------------------------------------------------------------------------------------------- 
+//  |       |   5   |   4   |   3   |   2   |   1   |      |   0   |   9   |   8   |   7   |   6   |       |
+      &none   &kp N5  &kp N4  &kp N3  &kp N2  &kp N1         &kp N0  &kp N9  &kp N8  &kp N7  &kp N6  &none
+// --------------------------------------------------------------------------------------------------------- 
+//  |       |       |       |       |       |       |      |       |       |       |       |       |       |
+      &none   &none   &none   &none   &none   &none          &none   &none   &none   &none   &none   &none
+// --------------------------------------------------------------------------------------------------------- 
+//                  |       |       |       |       |      |       |       |       |       |               
+                      &none   &none   &none   &none          &none   &none   &none   &none  
             >;
         };
     };
