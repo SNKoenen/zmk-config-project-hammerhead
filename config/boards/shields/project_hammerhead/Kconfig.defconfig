@@ -1,7 +1,7 @@
 if SHIELD_PROJECT_HAMMERHEAD_LEFT
 
 config ZMK_KEYBOARD_NAME
-    default "project_hammerhead"
+    default "prjct_hammerhead"
 
 config ZMK_SPLIT_ROLE_CENTRAL
     default y
