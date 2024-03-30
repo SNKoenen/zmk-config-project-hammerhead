@@ -8,3 +8,7 @@
                 <&pro_micro 18 GPIO_ACTIVE_HIGH>, // col4
                 <&pro_micro 19 GPIO_ACTIVE_HIGH>; // col5
 };
+
+&left_encoder {
+    status = "okay";
+};
