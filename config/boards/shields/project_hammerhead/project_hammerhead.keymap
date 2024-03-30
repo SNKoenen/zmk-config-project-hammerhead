@@ -10,59 +10,61 @@
         default_layer {
             bindings = <
 // ---------------------------------------------------------------       -------------------------------------------------------------
-// |    TAB    |    Q    |    W    |    E    |    R    |    T    |       |    Y    |    U    |    I    |    O    |    P    |         |
-      &kp TAB     &kp Q     &kp W     &kp E     &kp R     &kp T             &kp Y     &kp U     &kp I     &kp O     &kp P     &none
+// |    ESC    |    Q    |    D    |    R    |    W    |    B    |       |    J    |    F    |    U    |    P    |    ;    |   DEL   |
+      &kp ESC     &kp Q     &kp D     &kp R     &kp W     &kp B             &kp J     &kp F     &kp U     &kp P   &kp SEMI   &kp DEL
 // ---------------------------------------------------------------       -------------------------------------------------------------
-// |   CTRL    |    A    |    S    |    D    |    F    |    G    |       |    H    |    J    |    K    |    L    |    ;    |    '    |
-     &kp LCTRL    &kp A     &kp S     &kp D     &kp F     &kp G             &kp H     &kp J     &kp K     &kp L   &kp SEMI   &kp APOS
+// |    TAB    |    A    |    S    |    H    |    T    |    G    |       |    Y    |    N    |    E    |    O    |    I    |    '    |
+     &kp TAB      &kp A     &kp S     &kp H     &kp T     &kp G             &kp Y     &kp N     &kp E     &kp O     &kp I   &kp APOS
 // ---------------------------------------------------------------       -------------------------------------------------------------
-// |    SHFT   |    Z    |    X    |    C    |    V    |    B    |       |    N    |    M    |    ,    |    .    |    /    |  SHFT   |
-    &kp LSHFT     &kp Z     &kp X     &kp C     &kp V     &kp B             &kp N     &kp M   &kp COMMA  &kp DOT  &kp FSLH  &kp RSHFT
+// |  WINDOWS  |    Z    |    X    |    M    |    C    |    V    |       |    K    |    L    |    ,    |    .    |    /    |  ENTER  |
+     &kp LGUI     &kp Z     &kp X     &kp M     &kp C     &kp V             &kp K     &kp L   &kp COMMA  &kp DOT  &kp FSLH  &kp ENTER
 // ---------------------------------------------------------------       -------------------------------------------------------------
-//                       | WINDOWS |  SPACE  | LAYER_1 |  MUTE   |       |  MUTE   | LAYER_2 |  SPACE  |         |
-                          &kp LGUI  &kp SPACE   &mo 1   &kp C_MUTE       &kp C_MUTE   &mo 2   &kp SPACE   &none
+//                       |  SHIFT  |BACKSPACE| LAYER_1 |PLAYPAUSE|       |  MUTE   | LAYER_2 |  SPACE  |  CTRL   |
+                          &kp LSHFT &kp BSPC    &mo 1   &kp C_PP         &kp C_MUTE   &mo 2   &kp SPACE &kp LCTRL
 //                       -----------------------------------------       -----------------------------------------
             >;
 
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
+            sensor-bindings = <&inc_dec_kp C_NEXT C_PREV &inc_dec_kp C_VOL_UP C_VOL_DN>;
         };
 
 
-    right_layer_1 {
+    number_layer {
             bindings = <
 // ---------------------------------------------------------------       -------------------------------------------------------------
-// |  BT_CLR   |    Q    |    W    |    E    |    R    |    T    |       |   F7    |   F8    |   F9    |   F10   |   F11   |   F12   |
-    &bt BT_CLR    &kp Q     &kp W     &kp E     &kp R     &kp T            &kp F7    &kp F8    &kp F9    &kp F10   &kp F11   &kp F12
+// |           |    !    |    @    |    #    |    $    |    %    |       |    ^     |    &    |    *    |    {    |    }    |        |
+       &none    &kp EXCL    &kp AT  &kp HASH  &kp DLLR  &kp PRCNT         &kp CARET  &kp AMPS  &kp ASTRK &kp LBRC  &kp RBRC   &none
 // ---------------------------------------------------------------       -------------------------------------------------------------
-// | BT_SEL 0  | BT_SEL 1 |    S    |    D    |    F    |    G    |       |    0    |    9    |    8    |    7    |    6    |         |
-   &bt BT_SEL 0 &bt BT_SEL 1  &kp S     &kp D     &kp F     &kp G            &kp N0    &kp N9    &kp N8    &kp N7    &kp N6     &none
+// |     `     |    1    |    2    |    3    |    4    |    5    |       |    6    |    7    |    8    |    9    |    0    |    \    |
+     &kp GRAVE    &kp N1    &kp N2    &kp N3    &kp N4    &kp N5           &kp N6    &kp N7    &kp N8    &kp N9    &kp N0   &kp BSLH
 // ---------------------------------------------------------------       -------------------------------------------------------------
-// |  -   |    Z    |    X    |    C    |    V    |    B    |       |         |         |         |         |         |         |
-  &out OUT_BLE    &kp Z     &kp X     &kp C     &kp V     &kp B             &none     &none     &none     &none     &none     &none
+// |           |    ~    |    _    |    -    |    +    |    =    |       |    [    |    ]    |    (    |    )    |    |    |         |
+       $none    &kp TILDE &kp UNDER &kp MINUS &kp PLUS  &kp EQUAL         &kp LBKT  &kp RBKT  &kp LPAR  &kp RPAR  &kp PIPE    &none
 // ---------------------------------------------------------------       -------------------------------------------------------------
-//                       |   GUI   |   SPC   |   LWR   |  MUTE   |       |         |         |         |         |               
-                          &kp LGUI  &kp SPACE   &mo 1   &kp C_MUTE          &none     &none     &none     &none
+//                       |  SHIFT  |BACKSPACE| LAYER_1 |PLAYPAUSE|       |  MUTE   | LAYER_2 |  SPACE  |  CTRL   |
+                          &kp LSHFT &kp BSPC    &mo 1   &kp C_PP         &kp C_MUTE   &mo 2   &kp SPACE &kp LCTRL
 //                       -----------------------------------------       -----------------------------------------
             >;
         };
 
 
-        left_layer_1 {
+        control_layer {
             bindings = <
 // ---------------------------------------------------------------       -------------------------------------------------------------
-//   |   F1    |   F2    |   F3    |   F4    |   F5    |   F6    |       |    Y    |    U    |    I    |    O    |    P    |         |
-       &kp F1    &kp F2    &kp F3    &kp F4    &kp F5    &kp F6             &kp Y     &kp U     &kp I     &kp O     &kp P     &none
+// |  BT CLR   |  DEV 0  |  DEV 1  |  DEV 2  |  DEV 3  |  DEV 4  |       | OUT_BLE |         |    UP   |         |         |         |
+        &none     &none     &none     &none     &none     &none          &out OUT_BLE &none    &kp UP     &none     &none     &none    
 // ---------------------------------------------------------------       -------------------------------------------------------------
-//   |         |    5    |    4    |    3    |    2    |    1    |       |    H    |    J    |    K    |    L    |    ;    |    '    |
-        &none    &kp N5    &kp N4    &kp N3    &kp N2    &kp N1             &kp H     &kp J     &kp K     &kp L   &kp SEMI   &kp APOS
+// |           |         |         |         |         |         |       |         |  LEFT   |  DOWN   |  RIGHT  |         |         |
+       &none     &none     &none     &none     &none     &none              &none   &kp LEFT  &kp DOWN  &kp RIGHT   &none     &none    
 // ---------------------------------------------------------------       -------------------------------------------------------------
-//   |         |         |         |         |         |         |       |    N    |    M    |    ,    |    .    |    /    |  SHFT   |
-        &none     &none     &none     &none     &none     &none             &kp N     &kp M   &kp COMMA  &kp DOT  &kp FSLH  &kp RSHFT
+// |    F1     |   F2    |   F3    |   F4    |   F5    |   F6    |       |   F7    |   F8    |   F9    |   F10   |   F11   |   F12   |
+       &kp F1    &kp F2    &kp F3    &kp F4    &kp F5    &kp F6            &kp F7    &kp F8    &kp F9    &kp F10   &kp F11   &kp F12    
 // ---------------------------------------------------------------       -------------------------------------------------------------
-//                       |         |         |         |         |       |  MUTE   |   SPC   |  LAYER  |         |
-                            &none     &none     &none     &none          &kp C_MUTE  &kp LGUI   &mo 2     &none
+//                       |  SHIFT  |BACKSPACE| LAYER_1 |PLAYPAUSE|       |  MUTE   | LAYER_2 |  SPACE  |  CTRL   |
+                          &kp LSHFT &kp BSPC    &mo 1   &kp C_PP         &kp C_MUTE   &mo 2   &kp SPACE &kp LCTRL
 //                       -----------------------------------------       -----------------------------------------
             >;
         };
+
+
     };
 };
